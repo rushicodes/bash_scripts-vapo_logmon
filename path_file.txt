@@ -1,0 +1,1 @@
+/home/ruma0000/test/logmon_new/bash_scripts-vapo_logmon/logfile.txt

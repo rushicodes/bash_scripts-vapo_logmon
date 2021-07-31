@@ -5,15 +5,15 @@ HostIP=`hostname -i`
 dt=$(date +"%F_"%H:%M"")
 TEMP=$(date +"%Y%m%d.0.log")
 
-SRC="/home/ruma0000/test/logmon_new"
+SRC="/home/ruma0000/test/logmon_new/bash_scripts-vapo_logmon"
 cd $SRC;
-path_file=$SRC/path_file.txt
-MAIL_FILE=$SRC/mail_file.txt
-echo ' ' > $SRC/result.txt
-Log_dir=$SRC/logs
+log_paths=$SRC/path_file.txt
+#MAIL_FILE=$SRC/mail_file.txt
+#echo ' ' > $SRC/result.txt
+#Log_dir=$SRC/logs
 err_pattern="Error"
 
-for Path in `cat $path_file`
+for Path in `cat $log_paths`
 do  
     #NewPath=$Path$TEMP
     NewPath=$Path
@@ -24,7 +24,7 @@ do
             while IFS= read -r word; do
             if [[ "$word" == *"$err_pattern"* ]]; then
                 echo "$word"
-                $msg=$()
+                #$msg=$()
             fi 
             done
         echo "$err_pattern"
