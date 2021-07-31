@@ -24,6 +24,7 @@ do
             while IFS= read -r word; do
             if [[ "$word" == *"$err_pattern"* ]]; then
                 echo "$word"
+                $msg=$()
             fi 
             done
         echo "$err_pattern"
