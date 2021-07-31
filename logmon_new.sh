@@ -27,10 +27,11 @@ do
                         msg="$line"
                     if [[ "$line" == *"$err_pattern_ignore"* ]]; then
                         msg=' '
+                        echo "ignore err pattern"
                         break
                     fi
-                    echo $msg
                 fi 
+                echo $msg
             done < $NewPath
         fi
     fi
