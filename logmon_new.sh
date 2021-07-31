@@ -24,14 +24,14 @@ do
         #tr -s '[:blank:]' '[\n*]' < $NewPath|
             while IFS= read -r line; do
                 if [[ "$line" == *"$err_pattern"* ]]; then
-                        msg="$line"
+                        echo "$line" > $SRC/msg.txt
                     if [[ "$line" == *"$err_pattern_ignore"* ]]; then
                         msg=' '
                         echo "ignore err pattern"
                         break
                     fi
+                    cat $SRC/msg.txt
                 fi 
-                echo $msg
             done < $NewPath
         fi
     fi
