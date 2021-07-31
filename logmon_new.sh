@@ -5,7 +5,7 @@ HostIP=`hostname -i`
 dt=$(date +"%F_"%H:%M"")
 TEMP=$(date +"%Y%m%d.0.log")
 
-SRC="/home/ruma0000/test"
+SRC="/home/ruma0000/test/logmon_new"
 cd $SRC;
 path_file=$SRC/path_file.txt
 MAIL_FILE=$SRC/mail_file.txt
