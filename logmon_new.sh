@@ -20,13 +20,13 @@ do
     if [ -f $NewPath ]; then
       COUNT=`grep -c "$err_pattern" $NewPath`
       if [ "$COUNT" -gt 0 ]; then
-        tr -s '[:blank:]' '[\n*]' < $NewPath|
-            while IFS= read -r word; do
-            if [[ "$word" == *"$err_pattern"* ]]; then
-                echo "$word"
-                #$msg=$()
-            fi 
-            done
+        #tr -s '[:blank:]' '[\n*]' < $NewPath|
+            while IFS= read -r line; do
+                if [[ "$line" == *"$err_pattern"* ]]; then
+                    echo "$line"
+                    #$msg=$()
+                fi 
+            done < $NewPath
         echo "$err_pattern"
       fi
     fi
