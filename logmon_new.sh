@@ -12,6 +12,7 @@ log_paths=$SRC/path_file.txt
 #echo ' ' > $SRC/result.txt
 #Log_dir=$SRC/logs
 err_pattern="Error"
+err_pattern_ignore="ORA-12899"
 
 for Path in `cat $log_paths`
 do  
@@ -19,16 +20,17 @@ do
     NewPath=$Path
     if [ -f $NewPath ]; then
       COUNT=`grep -c "$err_pattern" $NewPath`
-      if [ "$COUNT" -gt 0 ]; then
+        if [ "$COUNT" -gt 0 ]; then
         #tr -s '[:blank:]' '[\n*]' < $NewPath|
             while IFS= read -r line; do
                 if [[ "$line" == *"$err_pattern"* ]]; then
-                    echo "$line"
-                    #$msg=$()
+                        msg="$line"
+                    if [[ "$line" == *"$err_pattern_ignore"* ]]; then
+                        msg=' '
+                    fi
                 fi 
             done < $NewPath
-        echo "$err_pattern"
-      fi
+        fi
     fi
 done 
 
