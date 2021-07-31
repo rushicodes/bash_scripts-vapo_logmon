@@ -29,6 +29,7 @@ do
                         msg=' '
                     fi
                 fi 
+                echo $msg
             done < $NewPath
         fi
     fi
