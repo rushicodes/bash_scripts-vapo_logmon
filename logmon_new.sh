@@ -26,7 +26,8 @@ do
                 if [[ "$line" == *"$err_pattern"* ]]; then
                         echo "$line" > $SRC/msg.txt
                     if [[ "$line" == *"$err_pattern_ignore"* ]]; then
-                        msg=' '
+                        echo $err_pattern_ignore
+                        echo ' ' > $SRC/msg.txt
                         echo "ignore err pattern"
                         break
                     fi
