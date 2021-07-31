@@ -20,7 +20,7 @@ regtypid, extra1, extra2, extra3, extra4, extra5, extra6, extra7, extra8, pamdat
 Error hkolliInsertQuery - : LB564263555SE3-PreparedStatementCallback; SQL [INSERT INTO H_KOLLI 
 (forsandelseid, vardebelopp, datum, tid, pnr,
 
-Error hkolliInsertQuery - : LB564263555SE4 ignore -PreparedStatementCallback; SQL [INSERT INTO H_KOLLI 
+Error hkolliInsertQuery - : LB564263555SE4 ignore now -PreparedStatementCallback; SQL [INSERT INTO H_KOLLI 
 (forsandelseid, vardebelopp, datum, tid, pnr,pamdatum, returdatum,
  ?)]; ORA-12899: unique constraint (VPROD.PK_H_KOLLI) violated
 ; nested exception is java.sql.SQLIntegrityConstraintViolationException: ORA-12899: unique constraint 
